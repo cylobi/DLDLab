@@ -1,0 +1,121 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Projects/CAD-CA2/trunk/trunk/sim
+T_opt
+!s110 1730824149
+V5gSG@>4]nm<hHO4nZ`PRh2
+04 12 4 work topModule_tb fast 0
+=1-98fa9b43f5e3-672a47d5-c-6604
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
+vcontroller
+!s10a 1730821736
+Z2 !s110 1730823081
+!i10b 1
+!s100 e6YkbSDG[804j]m@2mjY21
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+If40`0^jWH8bBGWZ4FNnW@3
+R0
+w1730821736
+8../src/hdl/controller.v
+F../src/hdl/controller.v
+!i122 0
+L0 3 49
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z6 !s108 1730823081.000000
+!s107 ../src/hdl/controller.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/controller.v|
+!i113 0
+Z7 o+acc -source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 +acc -source +define+SIM -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vdatapath
+!s10a 1730823508
+!s110 1730823595
+!i10b 1
+!s100 S<0ndT;RFOPX32PfFz@7g3
+R3
+Ic_zYe2Sl<835CP5M^53T12
+R0
+w1730823508
+8../src/hdl/datapath.v
+F../src/hdl/datapath.v
+!i122 4
+L0 1 54
+R4
+R5
+r1
+!s85 0
+31
+!s108 1730823595.000000
+!s107 ../src/hdl/datapath.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/datapath.v|
+!i113 0
+R7
+R8
+R1
+vtopModule
+!s10a 1730821717
+R2
+!i10b 1
+!s100 _P>2KVfm0[6>e7hd3]RZH1
+R3
+IbBm_hT:?fjg7HS@^Hj8^Z3
+R0
+w1730821717
+8../src/hdl/topModule.v
+F../src/hdl/topModule.v
+!i122 2
+L0 1 59
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../src/hdl/topModule.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/topModule.v|
+!i113 0
+R7
+R8
+R1
+ntop@module
+vtopModule_tb
+!s110 1730824144
+!i10b 1
+!s100 jB`o>Ff[?Vb1cGj8K`zoU1
+R3
+Ic]hW6VB1jcD=EmajNcDzK3
+R0
+w1730824139
+8./tb/topModule_tb.v
+F./tb/topModule_tb.v
+!i122 6
+L0 3 107
+R4
+R5
+r1
+!s85 0
+31
+!s108 1730824144.000000
+!s107 ./tb/topModule_tb.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+incdir+../src/inc|+define+SIM|./tb/topModule_tb.v|
+!i113 0
+R7
+!s92 +acc -source +incdir+../src/inc +define+SIM -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+ntop@module_tb
