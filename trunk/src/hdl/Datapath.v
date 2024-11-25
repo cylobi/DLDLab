@@ -1,12 +1,12 @@
 module Datapath(
     input clk, rst, clkEn, serIn, cnt1, cnt2, cntD, ldCntD, shEn, shEnD, serCntValid, Done, 
-    output reg co1, co2, coD, P0, P1, P2, P3
-    output reg [6:0] SSDout
+    output co1, co2, coD, P0, P1, P2, P3,
+    output [6:0] SSDout
 );
 
-wire reg [1:0] portNum;
-wire reg[3:0] NumData;
-wire reg[3:0] Datatrans;
+wire [1:0] portNum;
+wire [3:0] NumData;
+wire [3:0] Datatrans;
 
 
     PortNumShReg portnumshreg(
@@ -14,34 +14,34 @@ wire reg[3:0] Datatrans;
         .rst(rst),
         .clkEn(clkEn),
         .serIn(serIn),
-        .shEn(shEn)
+        .shEn(shEn),
         .portNum(portNum)
     );
     PortNumCnt portnumcnt(
         .clk(clk),
         .rst(rst),
         .clkEn(clkEn),
-        .cnt1(cnt1)
-        .co2(co2)
+        .cnt1(cnt1),
+        .co1(co1)
     );
     DataNumCnt datanumcnt(
         .clk(clk),
         .rst(rst),
-        .clkEN(clkEN),
+        .clkEn(clkEN),
         .cnt2(cnt2),
         .co2(co2)
     );
     DataNum_shr datanum_shr(
         .clk(clk),
         .rst(rst),
-        .clkEN(clkEN),
-        .Sh_enD(shEnD),
+        .clkEn(clkEN),
+        .sh_enD(shEnD),
         .NumData(NumData)
     );
     DataTrans_cnt datatrans_cnt(
         .clk(clk),
         .rst(rst),
-        .clkEN(clkEN),
+        .clkEn(clkEN),
         .ldcntD(ldCntD),
         .CntD(cntD),
         .NumData(NumData),
@@ -49,11 +49,11 @@ wire reg[3:0] Datatrans;
         .count(Datatrans)
     );
     SSD ssd(
-        .count(Datatrans),
+        .Count(Datatrans),
         .SSDout(SSDout)
     );
     Mux_4_to_1 mux(
-        .portNum(portNum),
+        .portnum(portNum),
         .SerIn(serIn),
         .p0(p0),
         .p1(p1),

@@ -10,7 +10,10 @@ reg [1:0] cnt;
             cnt <= 2'b00;
         end
         else if (clkEn && cnt1) begin
-            cnt == 3? co1 <= 1'b1 : cnt <= cnt + 1;
+            if (cnt == 3)
+            co1 <= 1'b1;
+            else 
+            cnt <= cnt + 1;
         end
         
     end

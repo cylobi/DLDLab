@@ -1,4 +1,4 @@
-module DataNum_Shr (
+module DataNum_shr (
     input clk,
     rst,
     clkEn,
@@ -9,8 +9,8 @@ module DataNum_Shr (
 
   always @(posedge clk, posedge rst) begin
     if (rst) NumData <= 0;
-    else if (clkEn && Sh_enD)
-      NumData <= {NumData[2:0], SerIn};
+    else if (clkEn && sh_enD)
+      NumData <= {NumData[2:0], serIn};
   end
 	
 endmodule

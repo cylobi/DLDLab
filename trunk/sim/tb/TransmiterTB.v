@@ -3,7 +3,7 @@ module TransmiterTB ();
   reg clk = 0, rst = 0, clkEn = 0, SerIn = 1;
   wire P0, P1, P2, P3, SerOutValid, Done;
   wire [6:0] SSD_Out;
-  Transmiter CUT3 (
+  Topmodule CUT3 (
       clk,
       clkEn,
       rst,

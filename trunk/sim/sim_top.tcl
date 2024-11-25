@@ -18,7 +18,7 @@
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/topModule.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Datanum_shr.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DatanumCnt.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DataTransCnt.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DataTrans_cnt.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SSD.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/counter.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Mux_4_to_1.v

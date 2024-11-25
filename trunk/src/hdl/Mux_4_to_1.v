@@ -9,12 +9,12 @@ module Mux_4_to_1 (
 
     always @(*) begin
         if (portnum == 2'b00) 
-            assign p0 = SerIn
+            assign p0 = SerIn;
         else if (portnum == 2'b01) 
-            assign p1 = SerIn
+            assign p1 = SerIn;
         else if (portnum == 2'b10) 
-            assign p2 = SerIn
+            assign p2 = SerIn;
         else if (portnum == 2'b11) 
-            assign p3 = SerIn
+            assign p3 = SerIn;
     end
 endmodule

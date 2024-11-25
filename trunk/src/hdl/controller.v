@@ -27,7 +27,7 @@ module Controller(input clk,
 		Idle: ns = SerIn ? Idle : red;
 		red: ns = Co1 ? green : red;
 		green: ns = Co2 ? black : green;
-		black: ns = coD ? Idle : red;
+		black: ns = CoD ? Idle : red;
 		default ns = Idle;
 		endcase
 	end
@@ -49,5 +49,4 @@ module Controller(input clk,
 		else if (clkEn)
 			ps <= ns;
 	end
-	assign ldcntD = Co2;
 endmodule
