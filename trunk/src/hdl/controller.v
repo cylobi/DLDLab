@@ -12,7 +12,7 @@ module Controller(input clk,
 				Sh_enP,
 				Sh_enD,
 				SerOutValid,
-				Done);
+	Done);
 				
 	parameter Idle = 3'b000,
 	 		  red = 3'b001,
@@ -25,9 +25,20 @@ module Controller(input clk,
 		case(ps)
 		Idle: ns = (SerIn && serIn) ? Idle : red;
 		red: ns = Co1 ? green : red;
-		green: ns = Co2 ? transmit_Data : green;
+		green: ns = Co2 ? black : green;
 		black: ns = SerIn ? Idle : red;
 		default ns = Idle;
+		endcase
+	end
+
+	always @(ps)begin
+		{Cnt1, Cnt2, CntD, ldcntD, Sh_enP, Sh_enD, SerOutValid, Done} = 8'b00000000;
+		case(ps)
+		Idle: ;
+		red: {Cnt1,Sh_enP} = 2'b11 ;
+		green: {Cnt2,Sh_enD} = 2'b11;
+		black: {CntD,SerOutValid} = 2'b11;
+		Done_transmit: Done = 1'b1;
 		endcase
 	end
 
