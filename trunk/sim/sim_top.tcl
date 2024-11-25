@@ -22,7 +22,7 @@
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SSD.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/counter.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Mux_4_to_1.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Onepulser_controller.v
+	# vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Onepulser_controller.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/PortNumCnt.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/PortNumShReg.v
 	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SSD.v
