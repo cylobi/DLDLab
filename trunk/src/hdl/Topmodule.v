@@ -1,4 +1,4 @@
-module Transmiter(
+module Topmodule(
 	input clk, clkEn, rst, SerIn, 
 	output SerOutValid, Done, P0, P1, P2, P3,
 	output [6:0] SSD_Out);
