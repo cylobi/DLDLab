@@ -17,53 +17,52 @@ module TransmiterTB ();
       SSD_Out
   );
 
-  always #30 clk = ~clk;
+  always #10 clk = ~clk;
   initial begin
-    #200 rst = 1;
-    #200 rst = 0;
-    #200 clkEn = 1;
+    #20 rst = 1;
+    #20 rst = 0;
+    #20 clkEn = 1;
 
-    #70 SerIn = 0;
+    #30 SerIn = 0;
 
-    #70 SerIn = 1;
-    #70 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 1;
 
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
 
-    #70 SerIn = 1;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
 
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
-    #70 SerIn = 0;
-    #70 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
+    #30 SerIn = 0;
+    #30 SerIn = 1;
 
-    #100 SerIn = 0;
-    #100 SerIn = 1;
+    #50 SerIn = 0;
+    #50 SerIn = 1;
 
 
-
-    #3564 $stop;
+    #100 $stop;
 
   end
 
