@@ -12,12 +12,12 @@ module Controller(input clk,
 				Sh_enP,
 				Sh_enD,
 				SerOutValid,
-	Done);
+				Done);
+				
 	parameter Idle = 3'b000,
 	 		  red = 3'b001,
 			  green = 3'b010,
-		 	  transmit_Data = 3'b011,
-			  Done_transmit = 3'b100;
+		 	  black = 3'b011;
 			  
 	reg [2:0] ps, ns;
 	
