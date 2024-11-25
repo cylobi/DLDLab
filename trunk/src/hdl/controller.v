@@ -1,7 +1,7 @@
 module Controller(input clk,
  				clkEn,
 				rst,
-				SerIn,
+				serIn,
 				Co1,
 				Co2,
 				CoD, 
@@ -22,9 +22,9 @@ module Controller(input clk,
 			  
 	reg [2:0] ps, ns;
 	
-	always @(ps, SerIn, Co1, Co2, CoD)begin
+	always @(ps, serIn, Co1, Co2, CoD)begin
 		case(ps)
-		Idle: ns = SerIn ? Idle : red;
+		Idle: ns = serIn ? Idle : red;
 		red: ns = Co1 ? green : red;
 		green: ns = Co2 ? black : green;
 		black: ns = CoD ? Idle : red;
