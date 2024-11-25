@@ -12,8 +12,13 @@ module Controller(input clk,
 				Sh_enP,
 				Sh_enD,
 				SerOutValid,
+<<<<<<< HEAD
 	Done);
 				
+=======
+				Done);
+
+>>>>>>> 8ccefbfe8bc01f6b3b06a24cbf3755af2f7f5709
 	parameter Idle = 3'b000,
 	 		  red = 3'b001,
 			  green = 3'b010,
@@ -23,10 +28,10 @@ module Controller(input clk,
 	
 	always @(ps, SerIn, Co1, Co2, CoD)begin
 		case(ps)
-		Idle: ns = (SerIn && serIn) ? Idle : red;
+		Idle: ns = SerIn ? Idle : red;
 		red: ns = Co1 ? green : red;
 		green: ns = Co2 ? black : green;
-		black: ns = SerIn ? Idle : red;
+		black: ns = coD ? Idle : red;
 		default ns = Idle;
 		endcase
 	end
