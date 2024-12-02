@@ -35,6 +35,7 @@ wire [3:0] Datatrans;
         .clk(clk),
         .rst(rst),
         .clkEn(clkEn),
+        .serIn(serIn),
         .sh_enD(shEnD),
         .NumData(NumData)
     );
