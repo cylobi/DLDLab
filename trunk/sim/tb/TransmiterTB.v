@@ -19,9 +19,16 @@ module TransmiterTB ();
 
   always #10 clk = ~clk;
   initial begin
-    #20 rst = 1;
-    #20 rst = 0;
-    #20 clkEn = 1;
+    clkPB = 0;
+    rst = 1;
+    #20;
+    rst = 0;
+
+    #30;
+    clkPB = 1;
+    #30;
+    clkPB = 0;
+    #30;
 
     #20 SerIn = 0;
 

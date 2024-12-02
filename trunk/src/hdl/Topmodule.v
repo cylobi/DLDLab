@@ -1,5 +1,5 @@
 module Topmodule(
-	input clk, clkEn, rst, SerIn, 
+	input clk, clkPB, clkEn, rst, SerIn, 
 	output SerOutValid, Done, P0, P1, P2, P3,
 	output [6:0] SSD_Out);
 
@@ -10,4 +10,6 @@ module Topmodule(
 
 	Datapath D(.clk(clk), .clkEn(clkEn), .rst(rst), .serIn(SerIn), .cnt1(Cnt1), .cnt2(Cnt2), .cntD(CntD), .ldCntD(ldcntD),
 			 .shEn(Sh_enP), .shEnD(Sh_enD), .Done(Done), .co1(Co1), .co2(Co2), .coD(CoD), .p0(P0), .p1(P1), .p2(P2), .p3(P3), .SSDout(SSD_Out));
+
+	Onepulser_contoller OC(.clk(clk), .clkPB(clkPB), .rst(rst), .clkEN(clkEn))
 endmodule
