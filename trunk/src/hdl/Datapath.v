@@ -27,21 +27,21 @@ wire [3:0] Datatrans;
     DataNumCnt datanumcnt(
         .clk(clk),
         .rst(rst),
-        .clkEn(clkEN),
+        .clkEn(clkEn),
         .cnt2(cnt2),
         .co2(co2)
     );
     DataNum_shr datanum_shr(
         .clk(clk),
         .rst(rst),
-        .clkEn(clkEN),
+        .clkEn(clkEn),
         .sh_enD(shEnD),
         .NumData(NumData)
     );
     DataTrans_cnt datatrans_cnt(
         .clk(clk),
         .rst(rst),
-        .clkEn(clkEN),
+        .clkEn(clkEn),
         .ldcntD(ldCntD),
         .CntD(cntD),
         .NumData(NumData),
