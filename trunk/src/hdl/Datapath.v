@@ -45,7 +45,7 @@ wire [3:0] Datatrans;
         .clkEn(clkEn),
         .ldcntD(ldCntD),
         .CntD(cntD),
-        .NumData(NumData),
+        .NumData({NumData[2:0], serIn}),
         .CoD(coD),
         .count(Datatrans)
     );

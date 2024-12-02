@@ -27,7 +27,7 @@ module Controller(input clk,
 		Idle: ns = serIn ? Idle : red;
 		red: ns = Co1 ? green : red;
 		green: ns = Co2 ? black : green;
-		black: ns = CoD ? Idle : red;
+		black: ns = CoD ? Idle : black;
 		default ns = Idle;
 		endcase
 	end

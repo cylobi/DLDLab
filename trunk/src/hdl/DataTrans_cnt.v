@@ -13,7 +13,7 @@ module DataTrans_cnt(
 		if (rst)
 			count <= 4'b1111;
 		else if(clkEn && ldcntD)
-				  count <= NumData;
+			count <= NumData;
 		else if(CntD)
 			count = count - 1'b1;
 	end
