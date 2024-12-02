@@ -23,46 +23,46 @@ module TransmiterTB ();
     #20 rst = 0;
     #20 clkEn = 1;
 
-    #10 SerIn = 0;
+    #20 SerIn = 0;
 
-    #10 SerIn = 1;
-    #10 SerIn = 1;
+    #20 SerIn = 1;
+    #20 SerIn = 0;
 
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
+    #20 SerIn = 1;
+    #20 SerIn = 0;
+    #20 SerIn = 1;
+    #20 SerIn = 0;
 
-    // #10 SerIn = 1;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
 
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
-    // #10 SerIn = 0;
-    // #10 SerIn = 0;
-    // #10 SerIn = 0;
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 0;
+    // #20 SerIn = 0;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
 
-    // #10 SerIn = 0;
-    // #10 SerIn = 1;
+    // #20 SerIn = 0;
+    // #20 SerIn = 1;
 
 
-    #100 $stop;
+    #1000 $stop;
 
   end
 
