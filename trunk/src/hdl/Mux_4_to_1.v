@@ -8,6 +8,7 @@ module Mux_4_to_1 (
 );
 
     always @(*) begin
+        {p0,p1,p2,p3} = 4'b0000;
         if (portnum == 2'b00) 
             assign p0 = SerIn;
         else if (portnum == 2'b01) 
