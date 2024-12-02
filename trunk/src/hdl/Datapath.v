@@ -1,5 +1,5 @@
 module Datapath(
-    input clk, rst, serIn, clkEn, cnt1, cnt2, cntD, ldCntD, shEn, shEnD, serCntValid, Done, 
+    input clk, rst, serIn, clkEn, cnt1, cnt2, cntD, ldCntD, shEn, shEnD, Done, 
     output co1, co2, coD, p0, p1, p2, p3,
     output [6:0] SSDout
 );
