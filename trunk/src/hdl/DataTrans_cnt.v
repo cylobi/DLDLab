@@ -14,8 +14,8 @@ module DataTrans_cnt(
 			count <= 4'b1111;
 		else if(clkEn && ldcntD)
 				  count <= NumData;
-			   else
-				  count = count - 1'b1;
+		else if(CntD)
+			count = count - 1'b1;
 	end
 	assign CoD = (count == 4'b0001) ? 1'b1 : 1'b0;
 endmodule

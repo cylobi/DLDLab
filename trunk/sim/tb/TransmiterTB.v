@@ -33,33 +33,33 @@ module TransmiterTB ();
     #10 SerIn = 0;
     #10 SerIn = 0;
 
-    #10 SerIn = 1;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
 
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
-    #10 SerIn = 0;
-    #10 SerIn = 1;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 0;
+    // #10 SerIn = 0;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
 
-    #50 SerIn = 0;
-    #50 SerIn = 1;
+    // #10 SerIn = 0;
+    // #10 SerIn = 1;
 
 
     #100 $stop;
