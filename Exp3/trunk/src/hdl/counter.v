@@ -1,16 +1,16 @@
 module Counter (
     input clk,
     rst,
-    clkEn,
-    cnt1,
-    output reg co1
+    input[7:0] par_in
+    output[7:0] reg par_out
 );
   reg count;
   always @(posedge clk, posedge rst) begin
     if (rst) count <= 0;
-    else if (clkEn)
-     if (cnt1) count = count + 1;
+    else if (clk)
+      count = count + 1;
   end
-    assign co1 = &count;
+
+  assign par_out = count;
 endmodule
 
