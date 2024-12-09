@@ -1,7 +1,6 @@
 module Counter8bit (
     input clk,
     rst,
-    input[7:0] par_in
     output[7:0] reg par_out
 );
   reg count;
