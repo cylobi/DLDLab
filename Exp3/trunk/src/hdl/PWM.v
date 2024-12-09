@@ -1,4 +1,4 @@
-module Counter (
+module PWM (
     input clk,
     rst,
     input[7:0] par_in
