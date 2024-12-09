@@ -1,4 +1,4 @@
-module Two's_complement
+module Twos_complement
 (
     input[5:0] a,
     output [5:0] out
