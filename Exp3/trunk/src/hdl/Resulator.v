@@ -11,9 +11,6 @@ module Resulator(input signBit, [7:0] XIn, output reg [8:0] YOut);
         else begin
             YOut <= {'b1, XIn}
         end
-    end
-
-
-    
+    end    
 
 endmodule
