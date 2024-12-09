@@ -4,14 +4,12 @@ module PWM (
     input[7:0] par_in
     output reg par_out
 );
-  reg out;
-  always @(posedge clk, posedge rst) begin
-    if (rst) out <= 0;
-    else if (clk)
-      if(par_in> count)
-        par_out = 1'b1;
-      else if(par_in < count)
-        par_out = 1'b0;
-  end
+  Counter8bit counter(
+    .clk(clk),
+    .rst(rst),
+    .par_out(count)
+  );
+
+  assign par_out = (par_in > count) ? 1'b1 : 1'b0;
 endmodule
 

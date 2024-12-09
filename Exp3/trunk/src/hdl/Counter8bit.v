@@ -3,13 +3,11 @@ module Counter8bit (
     rst,
     output[7:0] reg par_out
 );
-  reg count;
   always @(posedge clk, posedge rst) begin
-    if (rst) count <= 0;
+    if (rst) par_out <= 0;
     else if (clk)
-      count = count + 1;
+      par_out = par_out + 1;
   end
 
-  assign par_out = count;
 endmodule
 
