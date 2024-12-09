@@ -1,20 +1,17 @@
-module PWM (
+module Counter (
     input clk,
     rst,
-    inc,
     input[7:0] par_in
     output reg par_out
 );
-  reg count;
+  reg out;
   always @(posedge clk, posedge rst) begin
-    if (rst) count <= 0;
+    if (rst) out <= 0;
     else if (clk)
-      count = count + 1;
-    else if(par_in> count)
-      par_out = 1'b1;
-    else if(par_in < count)
-      par_out = 1'b0;
-
+      if(par_in> count)
+        par_out = 1'b1;
+      else if(par_in < count)
+        par_out = 1'b0;
   end
 endmodule
 
