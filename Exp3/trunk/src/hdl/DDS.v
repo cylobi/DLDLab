@@ -37,7 +37,7 @@ module DDS(
 		.b(twos_out),
 		.out(mux6_out)
 	);
-
+	
 	assign out_rom = lut[mux6_out];
 
 	NORmodule nor_(
@@ -53,8 +53,8 @@ module DDS(
 
 	Mux_2_to_1_8bit mux8(
 		.SM(and_out),
-		.a(8'd1),
-		.b(out_rom),
+		.b(8'hff),
+		.a(out_rom),
 		.out(mux8_out)
 	);
     

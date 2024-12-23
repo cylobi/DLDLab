@@ -1,32 +1,37 @@
 module TB_test;
-    reg clk;
-    reg reset;
-    wire [7:0] output_signal;
 
-    // Instantiate the design under test (DUT)
-    DDS dut (
-        .clk(clk),
-        .rst(rst),
-        .Magnitude(output_signal)
+    // Inputs
+    reg clk;
+    reg rst;
+
+    // Outputs
+    wire [7:0] Magnitude;
+
+    // Instantiate the Unit Under Test (UUT)
+    DDS uut (
+        .clk(clk), 
+        .rst(rst), 
+        .Magnitude(Magnitude)
     );
 
     initial begin
-        // Initialize signals
+        // Initialize Inputs
         clk = 0;
-        reset = 1;
-        #10 reset = 0;
+        rst = 0;
 
-        // Test case 1
-        #20; // Wait for some time
-        // Add assertions or checks here
+        // Wait for global reset
+        #100;
+                
+        // Apply reset
+        rst = 1;
+        #10;
+        rst = 0;
 
-        // Test case 2
-        #20; // Wait for some time
-        // Add assertions or checks here
-
-        // Finish simulation
-        #10 $finish;
+        // Add stimulus here
+        #10000;
+        $stop;
     end
+    
+    always #5 clk = ~clk; // Generate clock with period 10 time units
 
-    always #5 clk = ~clk; // Clock generation
 endmodule
