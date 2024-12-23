@@ -2,7 +2,7 @@ module DDS(
     input 
     clk, 
     rst,
-    output[7:0] reg Magnitude, 
+    output reg [7:0] Magnitude, 
 );
 
 	wire[5:0] addr , twos_out, mux6_out;

@@ -1,5 +1,4 @@
-module NORmodule
-(
+module NORmodule(
     input a,
     output out
 );

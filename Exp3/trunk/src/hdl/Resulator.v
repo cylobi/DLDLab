@@ -9,7 +9,7 @@ module Resulator(input signBit, [7:0] XIn, output reg [8:0] YOut);
             YOut <= (tcRes + 9'd255);
         end 
         else begin
-            YOut <= {'b1, XIn}
+            YOut <= {'b1, XIn};
         end
     end    
 
