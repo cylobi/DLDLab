@@ -2,7 +2,7 @@ module DDS(
     input 
     clk, 
     rst,
-    output[7:0] reg Magnitude, 
+    output reg [7:0] Magnitude 
 );
 
 	wire[5:0] addr , twos_out, mux6_out;
@@ -11,12 +11,15 @@ module DDS(
 	wire sign_bit, outn, outand;
 	reg[5:0] lut [63:0];
 	wire[5:0] out_rom;
+	wire signBit;
+	wire phasePos
 
 	SineController controller(
-		.clk(),
-		.rst(),
-		.sign_bit(),
-		.addr()
+		.clk(clk),
+		.rst(rst),
+		.signBit(signBit),
+		.phase_pos(phasePos),
+		.addr(addr)
 	);
 
 	Mux_2_to_1_6bit mux6(
@@ -38,7 +41,7 @@ module DDS(
 		.out(outn)	
 	);
 
-	ANDmodule(
+	ANDmodule a(
 		.a(outn),
 		.b(phase_pos),
 		.out(outands)
@@ -55,6 +58,12 @@ module DDS(
         .clk(clk),
         .rst(rst),
         .par_out(addr));
+
+	Resulator res(
+		.signBit(signBit),
+		.XIn(mux8_out),
+		.YOut(Magnitude)
+	)
     
 
     initial begin
