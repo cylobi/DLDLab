@@ -1,7 +1,7 @@
 module Counter8bit (
     input clk,
     rst,
-    output[5:0] reg par_out
+    output reg [5:0] par_out
 );
   reg count;
   always @(posedge clk, posedge rst) begin

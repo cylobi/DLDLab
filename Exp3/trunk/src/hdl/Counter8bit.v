@@ -1,7 +1,7 @@
 module Counter8bit (
     input clk,
     rst,
-    output[7:0] reg par_out
+    output reg [7:0] par_out
 );
   always @(posedge clk, posedge rst) begin
     if (rst) par_out <= 0;
