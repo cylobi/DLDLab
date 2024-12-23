@@ -1,12 +1,10 @@
 module SineController
 (
-    input 
-    clk, 
-    rst,
-    output 
-    reg signBit, 
-    reg phasePos, 
-    reg [5:0] addr
+    input clk, 
+    input rst,
+    output reg signBit, 
+    output reg phasePos, 
+    output reg [5:0] addr
 );
 
     parameter T1 = 2'b00,

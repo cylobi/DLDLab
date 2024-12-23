@@ -12,6 +12,13 @@ module DDS(
 	reg[5:0] lut [63:0];
 	wire[5:0] out_rom;
 
+	SineController controller(
+		.clk(),
+		.rst(),
+		.sign_bit(),
+		.addr()
+	);
+
 	Mux_2_to_1_6bit mux6(
 		.SM(phase_pos),
 		.a(addr),
@@ -53,6 +60,12 @@ module DDS(
     initial begin
         $readmemb("sine.mem", Lut);
     end
+
+	Resulator res(
+		.sign_bit(sign_bit),
+		.XIn(mux6_out),
+		.YOut(Magnitude)
+	);
 
 
 endmodule
