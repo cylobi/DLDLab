@@ -12,6 +12,8 @@ module Message_process (
         .clk(clk), 
         .rst(rst),
         .start(start),
+        .co1(co1),
+        .co2(co2),
         .ld(ld),
         .cnt1(cnt1),
         .shift(shift)

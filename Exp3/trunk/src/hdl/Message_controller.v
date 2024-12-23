@@ -2,6 +2,8 @@ module Message_controller(
     input clk, 
     input rst,
     input start,
+    input co1,
+    input co2,
     output reg ld,
     output reg cnt1,
     output reg shift
