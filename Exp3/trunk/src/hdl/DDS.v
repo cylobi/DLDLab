@@ -8,18 +8,26 @@ module DDS(
 	wire[5:0] addr , twos_out, mux6_out;
 	wire[7:0] mux8_out;
 	wire phase_pos;
-	wire sign_bit, outn, outand;
+	wire sign_bit, nor_out, and_out;
 	reg[5:0] lut [63:0];
 	wire[5:0] out_rom;
-	wire signBit;
-	wire phasePos
+	wire phasePos;
+
+	initial begin
+        $readmemb("sine.mem", Lut);
+    end
 
 	SineController controller(
 		.clk(clk),
 		.rst(rst),
-		.signBit(signBit),
+		.signBit(sign_bit),
 		.phase_pos(phasePos),
 		.addr(addr)
+	);
+
+	Twos_complement tc(
+		.a(addr),
+		.out(twos_out)
 	);
 
 	Mux_2_to_1_6bit mux6(
@@ -29,50 +37,29 @@ module DDS(
 		.out(mux6_out)
 	);
 
-	Twos_complement tc(
-		.a(addr),
-		.out(twos_out)
-	);
-
 	assign out_rom = lut[mux6_out];
 
-	NORmodule n(
+	NORmodule nor_(
 		.a(addr),
-		.out(outn)	
+		.out(nor_out)	
 	);
 
-	ANDmodule a(
-		.a(outn),
+	ANDmodule and_(
+		.a(nor_out),
 		.b(phase_pos),
-		.out(outands)
+		.out(and_out)
 	);
 
 	Mux_2_to_1_8bit mux8(
-		.SM(outands),
+		.SM(and_out),
 		.a(8'd1),
 		.b(lut),
 		.out(mux8_out)
 	);
-
-    Counter6bit cntr6b(
-        .clk(clk),
-        .rst(rst),
-        .par_out(addr));
-
-	Resulator res(
-		.signBit(signBit),
-		.XIn(mux8_out),
-		.YOut(Magnitude)
-	)
     
-
-    initial begin
-        $readmemb("sine.mem", Lut);
-    end
-
 	Resulator res(
 		.sign_bit(sign_bit),
-		.XIn(mux6_out),
+		.XIn(mux8_out),
 		.YOut(Magnitude)
 	);
 
