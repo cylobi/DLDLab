@@ -38,9 +38,9 @@ module DDS(
 	);
 
 	Mux_2_to_1_8bit mux8(
-		.SM(phase_pos),
-		.a(addr),
-		.b(twos_out),
+		.SM(outands),
+		.a(8'd1),
+		.b(lut),
 		.out(mux8_out)
 	);
 
@@ -53,15 +53,6 @@ module DDS(
     initial begin
         $readmemb("sine.mem", Lut);
     end
-
-
-	always @(posedge clk, posedge rst)begin
-		if (rst)
-			ps <= T1;
-		else
-			ps <= ns;
-	end
-
 
 
 endmodule
