@@ -5,5 +5,5 @@ module ANDmodule
     output out
 );
 
-assign out = (a&&b)
+assign out = (a&&b);
 endmodule
