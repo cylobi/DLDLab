@@ -11,6 +11,16 @@ module DDS(
 	wire sign_bit, outn, outand;
 	reg[5:0] lut [63:0];
 	wire[5:0] out_rom;
+	wire signBit;
+	wire phasePos
+
+	SineController controller(
+		.clk(clk),
+		.rst(rst),
+		.signBit(signBit),
+		.phase_pos(phasePos),
+		.addr(addr)
+	);
 
 	Mux_2_to_1_6bit mux6(
 		.SM(phase_pos),
@@ -31,7 +41,7 @@ module DDS(
 		.out(outn)	
 	);
 
-	ANDmodule(
+	ANDmodule a(
 		.a(outn),
 		.b(phase_pos),
 		.out(outands)
@@ -48,19 +58,17 @@ module DDS(
         .clk(clk),
         .rst(rst),
         .par_out(addr));
+
+	Resulator res(
+		.signBit(signBit),
+		.XIn(mux8_out),
+		.YOut(Magnitude)
+	)
     
 
     initial begin
         $readmemb("sine.mem", Lut);
     end
-
-
-	always @(posedge clk, posedge rst)begin
-		if (rst)
-			ps <= T1;
-		else
-			ps <= ns;
-	end
 
 
 
