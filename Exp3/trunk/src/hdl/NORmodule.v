@@ -1,5 +1,5 @@
 module NORmodule(
-    input a,
+    input[5:0] a,
     output out
 );
 
