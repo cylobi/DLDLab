@@ -4,7 +4,7 @@ module SineController
     input rst,
     output reg signBit, 
     output reg phasePos, 
-    output reg [5:0] addr
+    output [5:0] addr
 );
 
     parameter T1 = 2'b00,
@@ -15,7 +15,7 @@ module SineController
     reg [2:0] ps,ns;
     reg [7:0] Lut [0:63];
 
-    Counter6bit cntr6b(
+    Counter6Bit cntr6b(
         .clk(clk),
         .rst(rst),
         .par_out(addr));

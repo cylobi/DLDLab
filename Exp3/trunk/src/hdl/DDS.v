@@ -2,26 +2,27 @@ module DDS(
     input 
     clk, 
     rst,
-    output reg [7:0] Magnitude 
+    output [7:0] Magnitude 
 );
 
 	wire[5:0] addr , twos_out, mux6_out;
 	wire[7:0] mux8_out;
 	wire phase_pos;
 	wire sign_bit, nor_out, and_out;
-	reg[5:0] lut [63:0];
-	wire[5:0] out_rom;
+	reg [7:0] lut [63:0];
+	wire[7:0] out_rom;
 	wire phasePos;
+	wire lsb;
 
 	initial begin
-        $readmemb("sine.mem", Lut);
+        $readmemb("sine.mem", lut);
     end
 
 	SineController controller(
 		.clk(clk),
 		.rst(rst),
 		.signBit(sign_bit),
-		.phase_pos(phasePos),
+		.phasePos(phase_pos),
 		.addr(addr)
 	);
 
@@ -53,14 +54,14 @@ module DDS(
 	Mux_2_to_1_8bit mux8(
 		.SM(and_out),
 		.a(8'd1),
-		.b(lut),
+		.b(out_rom),
 		.out(mux8_out)
 	);
     
 	Resulator res(
-		.sign_bit(sign_bit),
+		.signBit(sign_bit),
 		.XIn(mux8_out),
-		.YOut(Magnitude)
+		.YOut({Magnitude,lsb})
 	);
 
 
