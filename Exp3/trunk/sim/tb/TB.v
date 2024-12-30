@@ -12,7 +12,7 @@ module TB;
     reg start;
 
     // Outputs
-    wire out;
+    wire [7:0] out;
 
     // Instantiate the Unit Under Test (UUT)
     TopModule uut (
@@ -59,7 +59,7 @@ module TB;
 
         // Test case 3: Change switch values
         SW = 10'b1001101101;
-        #20;
+        #100000;
 
         // Test case 4: Change mode and sel
         mode = 1;
