@@ -1,12 +1,12 @@
 module Message_process (
     input clk,
     input rst,
-    input [5:0] msg,
+    input [4:0] msg,
     input start,
-    output reg [7:0] out_reg,
+    output [8:0] out_reg
 );
 
-    wire co1, co2;
+    wire co1, co2, cnt1, cnt2;
 
     Message_controller controller(
         .clk(clk), 
@@ -16,6 +16,7 @@ module Message_process (
         .co2(co2),
         .ld(ld),
         .cnt1(cnt1),
+        .cnt2(cnt2),
         .shift(shift)
     );
 

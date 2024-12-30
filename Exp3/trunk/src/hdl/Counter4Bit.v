@@ -2,9 +2,9 @@ module Counter4bit (
     input clk,
     input rst,
     input cnt,
-    output reg co,
+    output reg co
 );
-  reg count;
+  reg [3:0] count;
   always @(posedge clk, posedge rst) begin
     if (rst) count <= 0;
     else if (cnt)
