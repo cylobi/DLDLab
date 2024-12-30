@@ -5,7 +5,7 @@ module Shift_reg (
     input shift,
     input ld,
     output reg [8:0] out,
-    output reg out_main
+    output out_main
 );
 
   always @(posedge clk, posedge rst) begin

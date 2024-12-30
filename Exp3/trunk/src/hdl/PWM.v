@@ -2,7 +2,7 @@ module PWM (
     input clk,
     rst,
     input[7:0] par_in,
-    output reg par_out
+    output par_out
 );
   Counter8bit counter(
     .clk(clk),

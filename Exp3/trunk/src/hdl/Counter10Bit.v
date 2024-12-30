@@ -2,7 +2,7 @@ module Counter10bit (
     input clk,
     input rst,
     input cnt,
-    output reg co
+    output co
 );
   reg [9:0] count;
   always @(posedge clk, posedge rst) begin
