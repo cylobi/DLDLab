@@ -6,7 +6,7 @@ module TopModule(
     input [9:0] SW,
     input mode,
     input start,
-    output out
+    output [7:0] out
 );
 
     wire out_frq, out_reg_mp, out_ld_frq_div;
@@ -46,14 +46,14 @@ module TopModule(
         .SM(mux_sel),
         .a(8'd128),
         .b(dds_out),
-        .out(pwm_in)
+        .out(out)
     );
-
+/*
     PWM pwm(
         .clk(clk),
         .rst(rst),
         .par_in(pwm_in),
         .par_out(out)
-    );
+    );*/
 
 endmodule
