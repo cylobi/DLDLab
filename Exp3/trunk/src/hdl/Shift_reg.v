@@ -5,6 +5,7 @@ module Shift_reg (
     input shift,
     input ld,
     output reg [8:0] out
+    output reg out_main
 );
 
   always @(posedge clk, posedge rst) begin
@@ -14,5 +15,7 @@ module Shift_reg (
     else if (ld)
       out <= {3'b0101,in};
   end
+
+  assign out_main = out[8];
 
 endmodule
