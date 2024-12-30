@@ -1,4 +1,5 @@
 module TopModule(
+    input clk,
     input sel,
     input [4:0] msg,
     input rst,
@@ -17,7 +18,7 @@ module TopModule(
     Top_frq tf(
         .clk(clk),
         .rst(rst),
-        .sel(),
+        .sel(out_reg_mp),
         .msg(msg),
         .SW(SW[7:5]),
         .out(out_frq),
@@ -25,7 +26,7 @@ module TopModule(
     );
 
     Message_process mp(
-        .clk(clk),
+        .clk(out_ld_frq_div),
         .rst(rst),
         .msg(msg),
         .start(start),
@@ -52,4 +53,6 @@ module TopModule(
         .rst(rst),
         .par_in(pwm_in),
         .par_out(out)
-    )
+    );
+
+endmodule
