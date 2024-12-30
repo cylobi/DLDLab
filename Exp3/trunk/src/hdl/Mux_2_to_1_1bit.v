@@ -1,4 +1,4 @@
-module Mux_2_to_1_8bit
+module Mux_2_to_1_1bit
 (
     input sel,
     input a,
