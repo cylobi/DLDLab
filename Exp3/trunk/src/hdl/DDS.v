@@ -12,7 +12,7 @@ module DDS(
 	reg [7:0] lut [63:0];
 	wire[7:0] out_rom;
 	wire phasePos;
-	wire lsb;
+	wire [8:0] res_out;
 
 	initial begin
         $readmemb("sine.mem", lut);
@@ -61,8 +61,10 @@ module DDS(
 	Resulator res(
 		.signBit(sign_bit),
 		.XIn(mux8_out),
-		.YOut({Magnitude,lsb})
+		.YOut(res_out)
 	);
+
+	assign Magnitude = res_out[8:1];
 
 
 endmodule

@@ -3,7 +3,8 @@ module Message_process (
     input rst,
     input [4:0] msg,
     input start,
-    output [8:0] out_reg
+    output [8:0] out_reg,
+    output out_main
 );
 
     wire co1, co2, cnt1, cnt2;
@@ -40,7 +41,8 @@ module Message_process (
         .in(msg),
         .shift(shift),
         .ld(ld),
-        .out(out_reg)
+        .out(out_reg),
+        .out_main(out_main)
     );
 
 endmodule

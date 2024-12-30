@@ -9,7 +9,7 @@ module frq_div (
   always @(posedge clk, posedge rst) begin
     if (rst) count <= 0;
     else if (ld)
-        count = {0'b1, SW, 5'b0};
+        count = {1'b1, SW, 5'd0};
     else if (clk)
       count = count + 1;
   end

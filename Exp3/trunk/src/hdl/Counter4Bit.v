@@ -2,7 +2,7 @@ module Counter4bit (
     input clk,
     input rst,
     input cnt,
-    output reg co
+    output co
 );
   reg [3:0] count;
   always @(posedge clk, posedge rst) begin
