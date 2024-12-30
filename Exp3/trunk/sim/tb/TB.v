@@ -50,7 +50,7 @@ module TB;
         #20 init = 0;
 
         // Test case 2: Send a message
-        msg = 10'b1000110101;
+        SW = 10'b1000110101;
         start = 1;
         #10 start = 0;
 
