@@ -4,30 +4,31 @@
 	exec vlib work
 	vmap work work
 	
-	set TB					"TransmiterTB"
+	set TB					"TB_test"
 	set hdl_path			"../src/hdl"
 	set inc_path			"../src/inc"
 	
 	set run_time			"1 us"
-#	set run_time			"-all"
+	set run_time			"-all"
 
 #============================ Add verilog files  ===============================
 # Pleas add other module here	
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/controller.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Datapath.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/topModule.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Datanum_shr.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DatanumCnt.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DataTrans_cnt.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SSD.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/counter.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Mux_4_to_1.v
-	# vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Onepulser_controller.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/PortNumCnt.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/PortNumShReg.v
-	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SSD.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/ANDmodule.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Counter6Bit.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Counter8bit.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/DDS.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Mux_2_to_1_6bit.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Mux_2_to_1_8bit.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/NORmodule.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/PWM.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Resulator.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/SineController.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/Twos_complement.v
+	vlog 	+acc -incr -source  +define+SIM 	$hdl_path/TwosComplement8Bit.v
 
 	vlog 	+acc -incr -source  +incdir+$inc_path +define+SIM 	./tb/$TB.v
+
+	file copy -force $hdl_path/sine.mem ./sine.mem
 	onerror {break}
 
 #================================ simulation ====================================
