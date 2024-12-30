@@ -3,7 +3,7 @@ module frq_div (
     input rst,
     input [2:0] SW,
     input ld,
-    output reg co
+    output co
 );
   reg [8:0] count;
   always @(posedge clk, posedge rst) begin
