@@ -4,6 +4,8 @@ module PWM (
     input[7:0] par_in,
     output par_out
 );
+  wire [7:0] count;
+
   Counter8bit counter(
     .clk(clk),
     .rst(rst),

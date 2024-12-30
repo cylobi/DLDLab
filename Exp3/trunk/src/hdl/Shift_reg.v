@@ -13,7 +13,7 @@ module Shift_reg (
     else if (shift)
       out <= {out[7:0], 1'b0};
     else if (ld)
-      out <= {3'b0101,in};
+      out <= {4'b0101,in};
   end
 
   assign out_main = out[8];

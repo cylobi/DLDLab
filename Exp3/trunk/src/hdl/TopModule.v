@@ -11,9 +11,10 @@ module TopModule(
 );
 
     wire out_frq, out_reg_mp, out_ld_frq_div;
-    wire dds_out;
-    wire pwm_in;
-    wire pwm_out;
+    wire [7:0] dds_out;
+    wire [7:0] pwm_in;
+    wire [7:0] pwm_out;
+    wire [8:0] tmp;
 
     Top_frq tf(
         .clk(clk),
@@ -30,7 +31,8 @@ module TopModule(
         .rst(rst),
         .msg(SW[4:0]),
         .start(start),
-        .out_reg(out_reg_mp)
+        .out_reg(tmp),
+        .out_main(out_reg_mp)
     );
 
     DDS dds(
