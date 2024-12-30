@@ -9,7 +9,7 @@ module TopModule(
     output out
 );
 
-    wire out_frq, out_reg_mp;
+    wire out_frq, out_reg_mp, out_ld_frq_div;
     wire dds_out;
     wire pwm_in;
     wire pwm_out;
@@ -20,7 +20,8 @@ module TopModule(
         .sel(),
         .msg(msg),
         .SW(SW[7:5]),
-        .out(out_frq)
+        .out(out_frq),
+        .out_ld_frq_div(out_ld_frq_div)
     );
 
     Message_process mp(

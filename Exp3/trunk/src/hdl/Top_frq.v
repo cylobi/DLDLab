@@ -4,7 +4,8 @@ module Top_frq(
     input sel,
     input [4:0] msg,
     input [2:0] SW,
-    output out
+    output out,
+    output out_ld_frq_div
 );
 
     wire out_ld_frq , out_frq;
@@ -31,6 +32,7 @@ module Top_frq(
     );
 
     assign out = out_mux;
+    assign out_ld_frq_div = out_ld_frq;
 
 
 endmodule
