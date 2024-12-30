@@ -33,13 +33,15 @@ module TopModule(
     );
 
     DDS dds(
-        .clk(),
+        .clk(out_frq),
         .rst(rst),
         .Magnitude(dds_out)
     );
 
+    assign mux_sel <= (out_reg_mp || sw[8])
+
     Mux_2_to_1_8bit m8b2i1(
-        .SM(),
+        .SM(mux_sel),
         .a(8'd128),
         .b(dds_out),
         .out(pwm_in)
