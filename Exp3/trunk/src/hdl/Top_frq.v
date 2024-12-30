@@ -2,7 +2,6 @@ module Top_frq(
     input clk,
     input rst,
     input sel,
-    input [4:0] msg,
     input [2:0] SW,
     input init,
     output out,

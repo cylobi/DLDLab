@@ -4,7 +4,7 @@ module TopModule(
     input [4:0] msg,
     input rst,
     input init,
-    input [8:0]sw,
+    input [9:0] SW,
     input mode,
     input start,
     output out
@@ -19,7 +19,6 @@ module TopModule(
         .clk(clk),
         .rst(rst),
         .sel(out_reg_mp),
-        .msg(msg),
         .SW(SW[7:5]),
         .init(init)
         .out(out_frq),
@@ -29,7 +28,7 @@ module TopModule(
     Message_process mp(
         .clk(out_ld_frq_div),
         .rst(rst),
-        .msg(msg),
+        .msg(SW[4:0]),
         .start(start),
         .out_reg(out_reg_mp)
     );
