@@ -4,7 +4,7 @@ module Counter10bit (
     input cnt,
     output reg co
 );
-  reg count;
+  reg [9:0] count;
   always @(posedge clk, posedge rst) begin
     if (rst) count <= 0;
     else if (cnt)
