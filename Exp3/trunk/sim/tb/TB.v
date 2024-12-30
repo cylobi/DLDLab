@@ -4,7 +4,6 @@ module TB;
     // Inputs
     reg clk;
     reg sel;
-    reg [4:0] msg;
     reg rst;
     reg init;
     reg [9:0] SW;
@@ -18,7 +17,6 @@ module TB;
     TopModule uut (
         .clk(clk),
         .sel(sel),
-        .msg(msg),
         .rst(rst),
         .init(init),
         .SW(SW),
@@ -37,7 +35,6 @@ module TB;
     initial begin
         // Initialize inputs
         sel = 0;
-        msg = 0;
         rst = 1;
         init = 0;
         SW = 0;
@@ -53,7 +50,7 @@ module TB;
         #20 init = 0;
 
         // Test case 2: Send a message
-        msg = 5'b10101;
+        msg = 10'b1000110101;
         start = 1;
         #10 start = 0;
 
@@ -76,7 +73,7 @@ module TB;
     // Monitor outputs
     initial begin
         $monitor("Time: %t | clk: %b | sel: %b | msg: %b | rst: %b | init: %b | SW: %b | mode: %b | start: %b | out: %b", 
-                 $time, clk, sel, msg, rst, init, SW, mode, start, out);
+                 $time, clk, sel, rst, init, SW, mode, start, out);
     end
 
 endmodule
