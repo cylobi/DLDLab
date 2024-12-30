@@ -4,6 +4,7 @@ module Top_frq(
     input sel,
     input [4:0] msg,
     input [2:0] SW,
+    input init,
     output out,
     output out_ld_frq_div
 );
@@ -14,6 +15,7 @@ module Top_frq(
         .clk(clk),
         .rst(rst),
         .SW(SW),
+        .ld(init),
         .co(out_ld_frq)
     );
 
@@ -21,6 +23,7 @@ module Top_frq(
         .clk(clk),
         .rst(rst),
         .SW(SW),
+        .ld(init),
         .co(out_frq)
     );
 

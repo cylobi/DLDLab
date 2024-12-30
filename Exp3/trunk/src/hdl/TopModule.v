@@ -21,6 +21,7 @@ module TopModule(
         .sel(out_reg_mp),
         .msg(msg),
         .SW(SW[7:5]),
+        .init(init)
         .out(out_frq),
         .out_ld_frq_div(out_ld_frq_div)
     );
