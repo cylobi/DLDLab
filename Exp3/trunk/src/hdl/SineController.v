@@ -4,7 +4,7 @@ module SineController
     input rst,
     output reg signBit, 
     output reg phasePos, 
-    output reg [5:0] addr
+    output [5:0] addr
 );
 
     parameter T1 = 2'b00,
@@ -15,7 +15,7 @@ module SineController
     reg [2:0] ps,ns;
     reg [7:0] Lut [0:63];
 
-    Counter6bit cntr6b(
+    Counter6Bit cntr6b(
         .clk(clk),
         .rst(rst),
         .par_out(addr));
@@ -27,10 +27,10 @@ module SineController
 
     always @(*)begin
 		case(ps)
-		T1: ns = (addr == 8'b11111111) ? T2 : T1;
-		T2: ns = (addr == 8'b11111111) ? T3 : T2;
-		T3: ns = (addr == 8'b11111111) ? T4 : T3;
-		T4: ns = (addr == 8'b11111111) ? T1 : T4;
+		T1: ns = (addr == 6'b111111) ? T2 : T1;
+		T2: ns = (addr == 6'b111111) ? T3 : T2;
+		T3: ns = (addr == 6'b111111) ? T4 : T3;
+		T4: ns = (addr == 6'b111111) ? T1 : T4;
 		default ns = T1;
 		endcase
 	end
@@ -39,8 +39,8 @@ module SineController
 		case(ps)
 		T1: {signBit, phasePos} <= 2'b00;
 		T2: {signBit, phasePos} <= 2'b01;
-		T3: {signBit, phasePos} <= 2'b11;
-		T4: {signBit, phasePos} <= 2'b10;
+		T3: {signBit, phasePos} <= 2'b10;
+		T4: {signBit, phasePos} <= 2'b11;
 		endcase
 	end
 
