@@ -1,4 +1,4 @@
-module Top(
+module Top_frq(
     input clk,
     input rst,
     input sel,
