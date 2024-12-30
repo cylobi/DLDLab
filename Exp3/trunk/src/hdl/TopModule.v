@@ -1,7 +1,6 @@
 module TopModule(
     input clk,
     input sel,
-    input [4:0] msg,
     input rst,
     input init,
     input [9:0] SW,
