@@ -20,7 +20,7 @@ module TopModule(
         .rst(rst),
         .sel(out_reg_mp),
         .SW(SW[7:5]),
-        .init(init)
+        .init(init),
         .out(out_frq),
         .out_ld_frq_div(out_ld_frq_div)
     );
@@ -39,7 +39,7 @@ module TopModule(
         .Magnitude(dds_out)
     );
 
-    assign mux_sel <= (out_reg_mp || sw[8])
+    assign mux_sel = (out_reg_mp || SW[8]);
 
     Mux_2_to_1_8bit m8b2i1(
         .SM(mux_sel),

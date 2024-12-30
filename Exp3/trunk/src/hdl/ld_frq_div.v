@@ -1,7 +1,7 @@
 module ld_frq_div (
     input clk,
     input rst,
-    input SW[2:0],
+    input [2:0] SW,
     input ld,
     output reg co
 );

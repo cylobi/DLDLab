@@ -4,7 +4,7 @@ module Shift_reg (
     input [4:0] in,
     input shift,
     input ld,
-    output reg [8:0] out
+    output reg [8:0] out,
     output reg out_main
 );
 
