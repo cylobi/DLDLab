@@ -43,6 +43,4 @@ module Message_process (
         .out(out_reg)
     );
 
-
-
 endmodule
