@@ -69,10 +69,5 @@ module TB;
         $stop;
     end
 
-    // Monitor outputs
-    initial begin
-        $monitor("Time: %t | clk: %b | sel: %b | msg: %b | rst: %b | init: %b | SW: %b | mode: %b | start: %b | out: %b", 
-                 $time, clk, sel, rst, init, SW, mode, start, out);
-    end
 
 endmodule
