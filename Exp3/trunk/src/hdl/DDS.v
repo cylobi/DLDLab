@@ -64,7 +64,7 @@ module DDS(
 		.YOut(res_out)
 	);
 
-	assign Magnitude = res_out[8:1];
+	assign Magnitude = res_out[7:0];
 
 
 endmodule
