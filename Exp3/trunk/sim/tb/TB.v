@@ -43,7 +43,6 @@ module TB;
 
         // Reset sequence
         #10 rst = 0;
-        #10 rst = 1;
 
         // Test case 1: Initialize system
         init = 1;
@@ -52,11 +51,12 @@ module TB;
         // Test case 2: Send a message
         SW = 10'b1000110101;
         start = 1;
-        #10 start = 0;
+        #10 
+        // start = 0;
 
         // Test case 3: Change switch values
         SW = 10'b1001101101;
-        #100000;
+        #100000000;
 
         // Test case 4: Change mode and sel
         mode = 1;
